@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} Search Results {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center">搜索结果</h1>
+
+    <ul class="list-group">
+        {% for result in results %}
+            <li class="list-group-item">
+                <a href="/event/{{ result._id }}"><strong>Title:</strong> {{ result.title }}</a><br>
+                <strong>Description:</strong> {{ result.description }}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
+
+
